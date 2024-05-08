@@ -9,3 +9,13 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
 		vim.fn.setpos('.', save_cursor)
 	end,
 })
+
+vim.api.nvim_create_autocmd({'BufWritePre'}, {
+    pattern = '*.h,*.hpp,*.c,*.cpp',
+    callback = function()
+        local save_cursor = vim.fn.getpos('.')
+        vim.lsp.buf.format()
+        vim.fn.setpos('.', save_cursor)
+    end,
+})
+

@@ -66,4 +66,6 @@ vim.keymap.set('n', '<leader><leader>', function() vim.cmd('so') end)
 -- Escape terminal easier
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
-
+-- Toggle between header and source file
+vim.keymap.set('n', '<M-o>', '<cmd>ClangdSwitchSourceHeader<CR>')
+vim.keymap.set('i', '<M-o>', '<ESC><cmd>ClangdSwitchSourceHeader<CR>')
